@@ -55,10 +55,10 @@ procedure Main is
       P : Pipe;
       C : Get_Result;
    begin
-      P := Open_Read ("cd .. & dir /b");
+      P := Open_Read ("netstat");
       loop
          C := Get (P);
-         exit when End_Of_File (C);
+         --exit when End_Of_File (C);
          Put (To_Ada (C));
       end loop;
       Close (P);
